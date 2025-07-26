@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./user_data.json:/app/user_data.json
+    environment:
+      - TZ=Asia/Singapore
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
